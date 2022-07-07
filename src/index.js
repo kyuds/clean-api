@@ -18,5 +18,3 @@ app.use(callback(invalid));
 app.listen(API_PORT, () => {
     console.log(`Server is listening on port ${API_PORT}.`);
 });
-
-//export default app;
