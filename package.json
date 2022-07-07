@@ -1,0 +1,26 @@
+{
+  "name": "clean-api",
+  "version": "1.0.0",
+  "description": "A simple user API based on the CLEAN architecture paradigm.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyuds/clean_api.git"
+  },
+  "author": "Daniel (Kyuseung) Shin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyuds/clean_api/issues"
+  },
+  "homepage": "https://github.com/kyuds/clean_api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
