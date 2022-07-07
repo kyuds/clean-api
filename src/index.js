@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 const API_ROOT = "";
 const API_PORT = 3000;
 
-//  RESTful Features
+//  RESTful Features.
 //app.get(`${API_ROOT}/developers`, callback(undefined));
 
-//  Invalid Gateway
+//  Invalid Gateway (Unsupported Feature).
 app.use(callback(invalid));
 
 app.listen(API_PORT, () => {
