@@ -17,6 +17,6 @@ Run `mongod` then `npm run start` to start MongoDB and the server.
 ### RESTful Features
 Try testing the API on Postman! The server listens on `localhost:3000`. 
 - Send a POST request through `localhost:3000/dev` with fields `firstName`, `lastName`, `email`, `currentCompany`, and `bestLanguage`. 
-- Send a GET request. There are two methods: path the `id` or include a query of `company` or `language` for filtering. 
+- Send a GET request. There are two methods: path the `id` or include a query of `company` or `language`. 
 - Send a PATCH request by putting the `id` in the path and changes to the `body`.
 - Send a DELETE request by putting the `id` in the path. 
