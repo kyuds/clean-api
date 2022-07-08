@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const callback = require("./callback");
-const { invalid } = require("./controller");
+const { invalid } = require("./http-controller");
 
 const app = express();
 app.use(bodyParser.json());

@@ -5,4 +5,4 @@ const controllers = Object.freeze({
     invalid
 });
 
-module.exports = { invalid }
+module.exports = controllers;

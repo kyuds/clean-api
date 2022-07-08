@@ -1,14 +1,9 @@
+//  Injected dependencies.
 const Id = require("../helper/id");
+const validEmail = require("../helper/valid-email");
+
+//  Model
 const buildMakeProfile = require("./profile");
-
-//  fix later.
-const validEmail = email => {
-    if (!email) {
-        return false;
-    }
-    return true;
-}
-
 const makeProfile = buildMakeProfile({ Id, validEmail });
 
 module.exports = makeProfile;
