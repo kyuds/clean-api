@@ -1,7 +1,7 @@
 {
   "name": "clean-api",
   "version": "1.0.0",
-  "description": "A simple user API based on the CLEAN architecture paradigm.",
+  "description": "A simple developer profile API based on the CLEAN architecture paradigm.",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index.js"
