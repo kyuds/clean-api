@@ -1,5 +1,5 @@
 const makeAddDev = require("./add-dev");
-const database = require("../db");
+const { database } = require("../db");
 
 
 //  create use-cases. 

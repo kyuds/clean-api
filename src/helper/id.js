@@ -2,7 +2,7 @@ const cuid = require("cuid");
 
 const Id = Object.freeze({
     makeId: cuid,
-    isValidId: cuid.isCuid
+    isValid: cuid.isCuid
 })
   
 module.exports = Id;
