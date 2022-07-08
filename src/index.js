@@ -10,9 +10,9 @@ const API_ROOT = "";
 const API_PORT = 3000;
 
 //  RESTful Features.
-app.get(`${API_ROOT}/developers`, callback(getDev));
-app.get(`${API_ROOT}/developers:id`, callback(getDev));
-app.post(`${API_ROOT}/developers`, callback(postDev));
+app.get(`${API_ROOT}/dev`, callback(getDev));
+app.get(`${API_ROOT}/dev:id`, callback(getDev));
+app.post(`${API_ROOT}/dev`, callback(postDev));
 
 //  Invalid Gateway (Unsupported Feature).
 app.use(callback(invalid));

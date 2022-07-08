@@ -5,28 +5,25 @@ const makeGetDev = ({ getDevID, getDevParam }) => {
         }
         try {
             //  pathParams is not valid. How to differentiate between load and queries?
-            const { id } = http.pathParams || {};
-            const { company, language } = http.queryParams || {};
+            const { id } = http.queryParams || {};
+            const { company, language } = http.body || {};
 
             if (id) {
+                const dev = await getDevID({ id });
                 return {
                     headers,
                     statusCode: 200,
-                    body: {
-                        id: id
-                    }
+                    body: dev
                 }
             } else if (company || language) {
+                const devs = await getDevParam({ company, language })
                 return {
                     headers,
                     statusCode: 200,
-                    body: {
-                        company: company,
-                        language: language
-                    }
+                    body: devs
                 }
             } else {
-                throw new Error("No valid path or query specified.");
+                throw new Error("No valid query or body specified.");
             }
         } catch (e) {
             console.log(e);
@@ -35,8 +32,6 @@ const makeGetDev = ({ getDevID, getDevParam }) => {
                 statusCode: 400,
                 body: {
                     error: e.message,
-                    path: http.pathParams,
-                    query: http.queryParams
                 }
             }
         }

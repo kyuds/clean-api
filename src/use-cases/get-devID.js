@@ -1,6 +1,6 @@
-const makeGetDevID = async ({ database }) => {
+const makeGetDevID = ({ database }) => {
     return async ({ id }) => {
-        
+        return id;
     };
 };
 
