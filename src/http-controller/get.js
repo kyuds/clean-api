@@ -4,9 +4,8 @@ const makeGetDev = ({ findDev }) => {
             "Content-Type": "application/json"
         }
         try {
-            const { id } = http.queryParams || {};
-            //  switch querying to more generic versions. 
-            const params = http.body || undefined;
+            const { id } = http.pathParams || {};
+            const params = http.queryParams;
 
             if (id) {
                 const dev = await findDev.id({ id });
@@ -15,7 +14,7 @@ const makeGetDev = ({ findDev }) => {
                     statusCode: 200,
                     body: dev
                 }
-            } else if (params) {
+            } else if (Object.keys(params).length) {
                 const devs = await findDev.params({ params });
                 return {
                     headers,
