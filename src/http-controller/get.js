@@ -1,22 +1,22 @@
-const makeGetDev = ({ getDevID, getDevParam }) => {
+const makeGetDev = ({ findDev }) => {
     return async (http) => {
         const headers = {
             "Content-Type": "application/json"
         }
         try {
-            //  pathParams is not valid. How to differentiate between load and queries?
             const { id } = http.queryParams || {};
-            const { company, language } = http.body || {};
+            //  switch querying to more generic versions. 
+            const params = http.body || undefined;
 
             if (id) {
-                const dev = await getDevID({ id });
+                const dev = await findDev.id({ id });
                 return {
                     headers,
                     statusCode: 200,
                     body: dev
                 }
-            } else if (company || language) {
-                const devs = await getDevParam({ company, language })
+            } else if (params) {
+                const devs = await findDev.params({ params });
                 return {
                     headers,
                     statusCode: 200,
@@ -26,6 +26,7 @@ const makeGetDev = ({ getDevID, getDevParam }) => {
                 throw new Error("No valid query or body specified.");
             }
         } catch (e) {
+            //  recognize custom errors. 
             console.log(e);
             return {
                 headers,
