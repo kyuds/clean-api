@@ -8,9 +8,9 @@ git clone https://github.com/kyuds/clean-api.git
 cd clean-api
 npm install
 ```
-Run `npm run start` to start the server. 
+Run `mongod` then `npm run start` to start MongoDB and the server. 
 
 ### RESTful Features
 Try testing the API on Postman! The server listens on `localhost:3000`. 
 Currently, a POST request is emulated, but not connected to a database. 
-- Send a post request through `localhost:3000/developers` with fields `firstName`, `lastName`, `email`, `currentCompany`, and `bestLanguage`. 
+- Send a POST request through `localhost:3000/developers` with fields `firstName`, `lastName`, `email`, `currentCompany`, and `bestLanguage`. 

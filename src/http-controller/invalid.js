@@ -4,7 +4,7 @@ const invalid = async (http) => {
           'Content-Type': 'application/json'
         },
         body: { error: 'Unsupported route or request.' },
-        statusCode: 404
+        statusCode: 405
       }
 };
 

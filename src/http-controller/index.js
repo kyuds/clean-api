@@ -1,13 +1,16 @@
-const { addDev } = require("../use-cases");
+const { addDev, getDevID, getDevParam } = require("../use-cases");
 
 //  controller builders
 const invalid = require("./invalid");
 const makePostDev = require("./post");
+const makeGetDev = require("./get");
 
 // controllers
 const postDev = makePostDev({ addDev });
+const getDev = makeGetDev({ getDevID, getDevParam });
 
 const controllers = Object.freeze({
+    getDev,
     postDev,
     invalid
 });
