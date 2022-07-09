@@ -11,11 +11,7 @@ const makeEditDev = ({ database }) => {
             throw new Error("Must query valid, existing ID.");
         }
 
-        //const newProfile = makeProfile({ ...profile, ...changes, modifiedOn: null });
-        const newProfile = {
-            id: id,
-            ...changes
-        }
+        const newProfile = makeProfile({ ...profile, ...changes, modifiedOn: undefined });
         const updated = await database.update({ ...newProfile });
         return updated;
     };

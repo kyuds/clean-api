@@ -6,18 +6,10 @@ const makeRemoveDev = ({ database }) => {
             throw new Error("Must query an ID for delete.");
         }
 
-        const profile = await database.findById({ id });
-        if (!profile) {
-            return {
-                success: false,
-                message: "Dev profile not found."
-            };
-        }
-
-        await database.remove({ profile });
+        const cnt = await database.remove({ id });
         return { 
-            success: true,
-            message: "Successfully deleted." 
+            success: cnt ? true : false,
+            message: cnt ? "Successfully deleted." : "Failed."
         };
     };
 };

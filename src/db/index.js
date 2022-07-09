@@ -1,19 +1,16 @@
 const makeProfileDB = require("./profile-db");
-const mongodb = require("mongodb");
+const { MongoClient } = require("mongodb");
 
 //  constants
-const URL = "mongodb://localhost:27017";
-const DB_NAME = "dev_profiles";
+const DB_NAME = "devprofiles";
+const URL = `mongodb://localhost:27017/${DB_NAME}`;
 
-const client = new mongodb.MongoClient(URL, { useNewUrlParser: true })
+const client = new MongoClient(URL, { useNewUrlParser: true });
 
 const makeDB = async () => {
-    if (!client.isConnected()) {
-      await client.connect()
-    }
-    return client.db(DB_NAME);
+	await client.connect();
+	return client.db();
 }
 
 const database = makeProfileDB({ makeDB })
-
 module.exports = Object.freeze({ makeDB, database });

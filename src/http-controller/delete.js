@@ -1,7 +1,6 @@
 const makeDeleteDev = ({ removeDev }) => {
     return async (http) => {
         try {
-            console.log(http)
             const deleted = await removeDev({ id: http.pathParams.id });
             
             return {

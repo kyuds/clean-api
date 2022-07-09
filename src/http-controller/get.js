@@ -11,18 +11,23 @@ const makeGetDev = ({ findDev }) => {
                 const dev = await findDev.id({ id });
                 return {
                     headers,
-                    statusCode: 200,
+                    statusCode: dev ? 200 : 404,
                     body: dev
                 }
             } else if (Object.keys(params).length) {
                 const devs = await findDev.params({ params });
                 return {
                     headers,
-                    statusCode: 200,
+                    statusCode: devs ? 200 : 404,
                     body: devs
                 }
             } else {
-                throw new Error("No valid query or body specified.");
+                const devs = await findDev.all();
+                return {
+                    headers,
+                    statusCode: devs ? 200 : 404,
+                    body: devs
+                }
             }
         } catch (e) {
             //  recognize custom errors. 
