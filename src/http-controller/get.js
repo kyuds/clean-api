@@ -30,7 +30,6 @@ const makeGetDev = ({ findDev }) => {
                 }
             }
         } catch (e) {
-            //  recognize custom errors. 
             console.log(e);
             return {
                 headers,

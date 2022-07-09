@@ -6,8 +6,8 @@ const buildMakeProfile = ({ Id, validEmail }) => {
         id = Id.makeId(),
         joinedOn = Date.now(),
         modifiedOn = Date.now(),
-        currentCompany,
-        bestLanguage
+        company,
+        language
     } = {}) => {
         if (!Id.isValid(id)) {
             throw new Error("Profile must have a valid ID");
@@ -18,7 +18,7 @@ const buildMakeProfile = ({ Id, validEmail }) => {
         if (!lastName || lastName.length < 2) {
             throw new Error("Profile must have a last name that is longer than 2 characters.");
         }
-        if (!bestLanguage) {
+        if (!language) {
             throw new Error("Profile must specify a preferred programming language.");
         }
         if (!validEmail(email)) {
@@ -39,8 +39,8 @@ const buildMakeProfile = ({ Id, validEmail }) => {
             email: email.toLowerCase(),
             joinedOn: joinedOn,
             modifiedOn: modifiedOn,
-            currentCompany: normalize(currentCompany),
-            bestLanguage: bestLanguage
+            company: normalize(company),
+            language: normalize(language)
         })
     }
 };

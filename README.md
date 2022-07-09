@@ -20,3 +20,7 @@ Try testing the API on Postman! The server listens on `localhost:3000`.
 - Send a GET request. There are two methods: path the `id` or include a query of `company` or `language`. 
 - Send a PATCH request by putting the `id` in the path and changes to the `body`.
 - Send a DELETE request by putting the `id` in the path. 
+
+### TO DO:
+- Custom errors & general error handling
+- Make query finding work. 
