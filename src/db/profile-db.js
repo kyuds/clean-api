@@ -26,21 +26,21 @@ const makeProfileDB = ({ makeDB }) => {
         if (found.length === 0) {
             return null
         }
-        const { _id: id, ...info } = found[0]
-        return { id, ...info }
+        const { _id: id, ...info } = found[0];
+        return { id, ...info };
     }
 
     async function findByParams({ filteredParams }) {
         const db = await makeDB();
         const result = await db.collection(COLLECTION)
-            .find(filteredParams).toArray()
+            .find(filteredParams).toArray();
         return result;
     }
 
     async function findAll() {
         const db = await makeDB();
         const result = await db.collection(COLLECTION)
-            .find({}).toArray()
+            .find({}).toArray();
         return result;
     }
 

@@ -19,4 +19,3 @@ Try testing the API on Postman! The server listens on `localhost:3000`.
 
 ### TO DO:
 - Custom errors & general error handling
-- Make query finding work. 

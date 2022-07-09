@@ -11,8 +11,8 @@ const makeAddDev = ({ database }) => {
             email: profile.email,
             joinedOn: profile.joinedOn,
             modifiedOn: profile.modifiedOn,
-            currentCompany: profile.currentCompany,
-            bestLanguage: profile.bestLanguage
+            company: profile.company,
+            language: profile.language
         });
     };
 };

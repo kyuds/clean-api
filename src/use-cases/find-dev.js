@@ -12,7 +12,12 @@ const makeFindDev = ({ database }) => {
         const filterer = ({ company, language }) => ({ company, language });
         
         const filteredParams = filterer(params);
-        const empty = Object.values(filteredParams).every(el => el === undefined);
+        Object.keys(filteredParams).forEach(key => {
+            if (filteredParams[key] === undefined) {
+              delete filteredParams[key];
+            }
+          });
+        const empty = Object.keys(filteredParams).length === 0;
 
         if (empty) {
             throw new Error("Invalid body for query. Please enter accepted parameters.");
