@@ -1,10 +1,6 @@
 # clean-api
 A simple developer profile REST API based on the CLEAN architecture paradigm.
 
-<br/>
-Currently, the database is not setup yet, so every command is emulated with the assumption that there is one. 
-This is the beauty of the CLEAN architecture: no need to have everything in place. 
-
 ### Installation and Quick Start
 Run the following commands in the directory where the code should be installed. 
 ```
