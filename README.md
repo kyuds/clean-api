@@ -12,7 +12,7 @@ git clone https://github.com/kyuds/clean-api.git
 cd clean-api
 npm install
 ```
-Run `mongod` then `npm run start` to start MongoDB and the server. 
+Run `npm run start` to start the server. As the API also needs to connect to a (local) database, we suggest to install MongoDB through Homebrew and start the mongodb-community service through brew services. This aligns with the URI set in the /db folder.
 
 ### RESTful Features
 Try testing the API on Postman! The server listens on `localhost:3000`. 
