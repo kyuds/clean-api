@@ -1,5 +1,5 @@
 # clean-api
-A simple developer profile REST API based on the CLEAN architecture paradigm.
+A simple developer profile REST API based on the CLEAN architecture paradigm. This code was developed as practice for implementing the CLEAN architecture for REST APIs with the ME(R)N stack (we eliminated the "R" for React as this is just the backend). 
 
 ### Installation and Quick Start
 Run the following commands in the directory where the code should be installed. 
